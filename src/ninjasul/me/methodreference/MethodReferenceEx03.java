@@ -95,9 +95,10 @@ class ProductA extends Product {
 
     @Override
     public String toString() {
-        return "A=" + super.toString();
+        final StringBuilder sb = new StringBuilder("ProductA{");
+        sb.append('}');
+        return sb.toString();
     }
-
 }
 
 class ProductB extends Product {
@@ -107,7 +108,9 @@ class ProductB extends Product {
 
     @Override
     public String toString() {
-        return "B=" + super.toString();
+        final StringBuilder sb = new StringBuilder("ProductB{");
+        sb.append('}');
+        return sb.toString();
     }
 }
 
@@ -116,8 +119,5 @@ class ProductC extends Product {
         super(id, name, price);
     }
 
-    @Override
-    public String toString() {
-        return "C=" + super.toString();
-    }
+
 }
