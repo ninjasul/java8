@@ -58,12 +58,12 @@ public class MethodReferenceEx03 {
 
 @FunctionalInterface
 interface OldProductFactory {
-    OldProduct create( Long id, String name, BigDecimal price);
+    OldProduct create(Long id, String name, BigDecimal price);
 }
 
 @FunctionalInterface
 interface ProductFactory <T extends Product> {
-    T create( Long id, String name, BigDecimal price);
+    T create(Long id, String name, BigDecimal price);
 }
 
 @Data
@@ -95,10 +95,9 @@ class ProductA extends Product {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("ProductA{");
-        sb.append('}');
-        return sb.toString();
+        return "A=" + super.toString();
     }
+
 }
 
 class ProductB extends Product {
@@ -108,9 +107,7 @@ class ProductB extends Product {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("ProductB{");
-        sb.append('}');
-        return sb.toString();
+        return "B=" + super.toString();
     }
 }
 
@@ -119,5 +116,8 @@ class ProductC extends Product {
         super(id, name, price);
     }
 
-
+    @Override
+    public String toString() {
+        return "C=" + super.toString();
+    }
 }
